@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CosmicCat - The Meme Coin That's Actually Going to Space!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --space-blue: #0B0B2D;
+            --neon-purple: #8A2BE2;
+            --cosmic-pink: #FF2A6D;
+            --starlight: #00E0FF;
+            --cat-yellow: #FFD700;
+            --light: #ffffff;
+            --gradient: linear-gradient(90deg, var(--neon-purple), var(--cosmic-pink));
+            --space-gradient: linear-gradient(to bottom, #020111 0%, #1B1B3A 40%, #2A2A48 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: var(--space-gradient);
+            color: var(--light);
+            overflow-x: hidden;
+            font-family: 'Comic Neue', cursive;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(138, 43, 226, 0.15) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 42, 109, 0.15) 0%, transparent 20%);
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="%238A2BE2"/><text x="8" y="16" font-family="Arial" font-size="10" fill="white">🐱</text></svg>'), auto;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: rgba(11, 11, 45, 0.9);
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px dashed var(--cat-yellow);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 2.2rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+        }
+        
+        .logo-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            animation: spin 5s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--light);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--cat-yellow);
+            transition: width 0.3s ease;
+            border-radius: 3px;
+        }
+        
+        nav a:hover {
+            color: var(--starlight);
+        }
+        
+        nav a:hover:after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h2 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .hero p {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--cat-yellow);
+            line-height: 1.6;
+        }
+        
+        .funny-subtitle {
+            font-size: 1.5rem;
+            color: var(--starlight);
+            margin: 2rem 0;
+            font-style: italic;
+            text-shadow: 0 0 10px rgba(0, 224, 255, 0.7);
+        }
+        
+        .meme-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 20px;
+            margin: 2rem auto;
+            max-width: 600px;
+            border: 3px solid var(--cosmic-pink);
+            box-shadow: 0 0 20px rgba(255, 42, 109, 0.5);
+        }
+        
+        .meme-text {
+            font-size: 2rem;
+            color: var(--cat-yellow);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .meme-image {
+            width: 100%;
+            border-radius: 15px;
+            border: 2px solid var(--starlight);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+            margin: 1rem;
+            font-size: 1.2rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(138, 43, 226, 0.6);
+        }
+        
+        .btn-buy {
+            background: linear-gradient(90deg, var(--cosmic-pink), var(--cat-yellow));
+            font-size: 1.5rem;
+            padding: 1.5rem 4rem;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 5rem 0;
+            background: rgba(11, 11, 45, 0.7);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.8rem;
+            color: var(--light);
+        }
+        
+        .section-title span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--starlight);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            border-color: var(--cosmic-pink);
+        }
+        
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: var(--cat-yellow);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--starlight);
+        }
+        
+        .feature-card p {
+            color: #cccccc;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        /* Meme Section */
+        .meme-section {
+            padding: 5rem 0;
+            background: rgba(11, 11, 45, 0.9);
+            text-align: center;
+        }
+        
+        .meme-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .meme-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 2px dashed var(--cat-yellow);
+            transition: all 0.3s ease;
+        }
+        
+        .meme-item:hover {
+            transform: scale(1.05) rotate(3deg);
+            border-style: solid;
+            border-color: var(--cosmic-pink);
+        }
+        
+        .meme-caption {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            color: var(--starlight);
+        }
+        
+        /* Tokenomics Section */
+        .tokenomics {
+            padding: 5rem 0;
+            background: rgba(11, 11, 45, 0.7);
+        }
+        
+        .tokenomics-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .tax-banner {
+            background: rgba(0, 255, 140, 0.2);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border: 3px solid #00ff8c;
+            text-align: center;
+            animation: pulse 2s infinite;
+        }
+        
+        .tax-banner h3 {
+            font-size: 2.5rem;
+            color: #00ff8c;
+            margin-bottom: 1rem;
+        }
+        
+        .chart-container {
+            margin: 3rem 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .chart-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .chart {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            background: conic-gradient(
+                var(--neon-purple) 0% 70%,
+                var(--cosmic-pink) 70% 85%,
+                var(--starlight) 85% 95%,
+                var(--cat-yellow) 95% 100%
+            );
+            position: relative;
+        }
+        
+        .chart::before {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: var(--space-blue);
+            border-radius: 50%;
+        }
+        
+        .chart span {
+            position: relative;
+            z-index: 1;
+            font-size: 1.5rem;
+        }
+        
+        .chart-item p {
+            font-weight: 600;
+            color: var(--light);
+        }
+        
+        /* Community Section */
+        .community {
+            padding: 5rem 0;
+            background: rgba(11, 11, 45, 0.9);
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .social-link {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid var(--starlight);
+        }
+        
+        .social-link:hover {
+            transform: translateY(-10px) rotate(10deg);
+            background: var(--gradient);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        
+        footer {
+            background-color: var(--space-blue);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 3px dashed var(--cat-yellow);
+        }
+        
+        .disclaimer {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #cccccc;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Funny Elements */
+        .floating-cats {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            z-index: 999;
+            pointer-events: none;
+            font-size: 2rem;
+            animation: floatAround 20s infinite linear;
+        }
+        
+        @keyframes floatAround {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(100px, 200px) rotate(90deg); }
+            50% { transform: translate(200px, 100px) rotate(180deg); }
+            75% { transform: translate(100px, 50px) rotate(270deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+        
+        .comic-bubble {
+            position: relative;
+            background: white;
+            border-radius: 20px;
+            padding: 1rem;
+            margin: 1rem 0;
+            color: black;
+            font-weight: bold;
+            max-width: 300px;
+            margin: 1rem auto;
+        }
+        
+        .comic-bubble:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            border-width: 10px 10px 0;
+            border-style: solid;
+            border-color: white transparent;
+            transform: translateX(-50%);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .btn {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+            
+            .btn-buy {
+                font-size: 1.2rem;
+                padding: 1.2rem 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating cats -->
+    <div class="floating-cats" style="top: 10%; left: 5%;">🐱</div>
+    <div class="floating-cats" style="top: 20%; right: 10%;">🚀</div>
+    <div class="floating-cats" style="bottom: 30%; left: 15%;">🌕</div>
+    <div class="floating-cats" style="bottom: 20%; right: 15%;">💎</div>
+    
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-img">🐱</div>
+                    <h1>CosmicCat</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#meme">Memes</a></li>
+                        <li><a href="#tokenomics">Zero Tax</a></li>
+                        <li><a href="#community">Community</a></li>
+                        <li>
+                            <a href="https://x.com/CoinCosmiccat?t=AhQuj219EpIFiqYw9J6Vig&s=09" target="_blank">
+                                <i class="fab fa-twitter"></i> Follow Us
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>CosmicCat: To the Moon! 🚀</h2>
+                <p>The only meme coin that's actually going to space (no, seriously!)</p>
+                
+                <div class="funny-subtitle">
+                    "I don't always invest in meme coins, but when I do, I prefer CosmicCat"
+                </div>
+                
+                <div class="meme-container">
+                    <div class="meme-text">WHEN YOU FIND OUT COSMICCAT HAS 0% TAX</div>
+                    <div class="comic-bubble">Wait, I get to keep all my money? 😲</div>
+                    <img src="https://placekitten.com/500/300" alt="Funny cosmic cat meme" class="meme-image">
+                </div>
+                
+                <div>
+                    <a href="#how-to-buy" class="btn btn-buy">BUY NOW (BEFORE YOUR FRIENDS DO)</a>
+                    <a href="https://x.com/CoinCosmiccat?t=AhQuj219EpIFiqYw9J6Vig&s=09" class="btn" target="_blank">
+                        <i class="fab fa-twitter"></i> Follow for Memes
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about" class="features">
+        <div class="container">
+            <h2 class="section-title">Why <span>CosmicCat</span> Isn't Just Another Meme Coin</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Actual Space Mission</h3>
+                    <p>We're literally sending a CosmicCat plushie to space. No, really. We have a rocket and everything.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💸</div>
+                    <h3>Zero Tax = More Money</h3>
+                    <p>0% buy tax, 0% sell tax. Because we believe in keeping your money where it belongs - in your pocket.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">😹</div>
+                    <h3>Actually Funny</h3>
+                    <p>Our memes are certified 100% fresher than your grandma's cookies.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌌</div>
+                    <h3>Cosmic Energy</h3>
+                    <p>Our cat has been to space (in our minds). That's got to be worth something, right?</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💎</div>
+                    <h3>Diamond Paws</h3>
+                    <p>Our community doesn't sell. We just keep stacking and laughing at other meme coins.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛸</div>
+                    <h3>Alien Endorsed</h3>
+                    <p>We can't prove it, but we're pretty sure aliens are investing. Their technology is just that good.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="meme" class="meme-section">
+        <div class="container">
+            <h2 class="section-title">Fresh <span>Memes</span> Daily</h2>
+            <p>Our memes are so fresh, they still have space dust on them</p>
+            
+            <div class="meme-gallery">
+                <div class="meme-item">
+                    <img src="https://placekitten.com/300/200" alt="CosmicCat meme 1" class="meme-image">
+                    <div class="meme-caption">When you buy CosmicCat vs other meme coins</div>
+                </div>
+                <div class="meme-item">
+                    <img src="https://placekitten.com/300/200" alt="CosmicCat meme 2" class="meme-image">
+                    <div class="meme-caption">Me trying to explain CosmicCat to my friends</div>
+                </div>
+                <div class="meme-item">
+                    <img src="https://placekitten.com/300/200" alt="CosmicCat meme 3" class="meme-image">
+                    <div class="meme-caption">When that 0% tax hits different</div>
+                </div>
+                <div class="meme-item">
+                    <img src="https://placekitten.com/300/200" alt="CosmicCat meme 4" class="meme-image">
+                    <div class="meme-caption">Our devs watching the chart go up</div>
+                </div>
+            </div>
+            
+            <a href="https://x.com/CoinCosmiccat?t=AhQuj219EpIFiqYw9J6Vig&s=09" class="btn" target="_blank">
+                <i class="fab fa-twitter"></i> Follow for Daily Laughs
+            </a>
+        </div>
+    </section>
+    
+    <section id="tokenomics" class="tokenomics">
+        <div class="container">
+            <div class="tokenomics-content">
+                <h2 class="section-title">Tokenomics: <span>0% Tax</span> Means 100% Profit</h2>
+                
+                <div class="tax-banner">
+                    <h3>🚀 ZERO TAX 🚀</h3>
+                    <p>That's right! 0% buy tax, 0% sell tax. We hate taxes more than cats hate baths.</p>
+                </div>
+                
+                <div class="chart-container">
+                    <div class="chart-item">
+                        <div class="chart"><span>80%</span></div>
+                        <p>Fair Launch</p>
+                    </div>
+                    <div class="chart-item">
+                        <div class="chart"><span>10%</span></div>
+                        <p>Liquidity</p>
+                    </div>
+                    <div class="chart-item">
+                        <div class="chart"><span>5%</span></div>
+                        <p>Space Mission</p>
+                    </div>
+                    <div class="chart-item">
+                        <div class="chart"><span>5%</span></div>
+                        <p>Team & Development</p>
+                    </div>
+                </div>
+                
+                <div class="comic-bubble">Wait, so I get to keep ALL my money? Is that even legal?</div>
+                
+                <p>Total Supply: 1,000,000,000 COSMIC</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="community" class="community">
+        <div class="container">
+            <h2 class="section-title">Join Our <span>Space Community</span></h2>
+            <p>Where the memes are hot and the vibes are cosmic</p>
+            
+            <div class="social-links">
+                <a href="https://x.com/CoinCosmiccat?t=AhQuj219EpIFiqYw9J6Vig&s=09" class="social-link" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-reddit"></i></a>
+            </div>
+            
+            <div class="comic-bubble">This is the way... to the moon! 🚀</div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-img">🐱</div>
+                <h1>CosmicCat</h1>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://x.com/CoinCosmiccat?t=AhQuj219EpIFiqYw9J6Vig&s=09" class="social-link" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-reddit"></i></a>
+            </div>
+            
+            <div class="disclaimer">
+                <p><strong>Disclaimer:</strong> CosmicCat is a meme coin with absolutely no intrinsic value. We're probably not going to the moon, but it's fun to pretend. Please only invest what you can afford to lose, and remember that our team spends most of their time making memes, not financial decisions.</p>
+            </div>
+            
+            <p>&copy; 2025 CosmicCat. All rights reserved. Probably.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Add some interactive fun
+        document.addEventListener('DOMContentLoaded', function() {
+            // Make buttons more fun
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(btn => {
+                btn.addEventListener('mouseenter', () => {
+                    btn.style.transform = 'scale(1.1) rotate(2deg)';
+                });
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.transform = '';
+                });
+            });
+            
+            // Add meow sound on click (placeholder)
+            document.addEventListener('click', () => {
+                // In a real implementation, you would play a sound here
+                console.log("Meow! 🐱");
+            });
+            
+            // Animate meme items on scroll
+            const memeItems = document.querySelectorAll('.meme-item');
+            memeItems.forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    item.style.transform = 'scale(1.05) rotate(3deg)';
+                });
+                item.addEventListener('mouseleave', () => {
+                    item.style.transform = '';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
